@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Js Practise</title>
+</head>
+
+<body>
+  <div id="id"></div>
+
+  <!-- how to center a div -->
+  <!-- <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .parent {
+        position: relative;
+        background-color: blue;
+        height: 100vh;
+        width: 100%;
+      }
+      .child {
+        position: absolute;
+        height: 400px;
+        width: 20em;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: red;
+      }
+    </style>
+    <div class="parent">
+      <div class="child"></div>
+    </div> -->
+  <script>
+    // ############## question 1 ###################
+
+    // let a = [];
+    // let b = [];
+    // console.log(a == b);
+    // console.log(a === b);
+
+    // both false due to both have distinct memory allocation, so it compare with allocation not array.
+
+    // ############## question 2 ###################
+
+    //    let a = [];
+    //    let b = a;
+    //    console.log( a == b);
+    //    console.log(a === b);
+
+    // both true due to memory allocation of a is assign to b so equal.
+
+    // ############## question 3 ###################
+    //   let a = [20];
+    //   let b = [20];
+    //   console.log(a[0] == b[0]);
+    //   console.log(a[0] === b[0]);
+
+    // both true due to here compare arrays elements value not memory allocation.
+
+    // ############## question 4 ###################
+    // let a = [1,2,3,4];
+    // let b = {name : "sneha"};
+    // console.log(...a);
+
+    // due to destructuring of a, output be 1234
+
+    // ############## question 5 ###################
+    // console.log(typeof NaN);
+    // output number
+
+    // ############## question 6 ###################
+    //    let data = 10 - -10;
+    //    console.log(data);
+    //    output 20, -(-) plus.
+
+    // ############## question 7 ###################
+
+    //  const set = new Set([1,1,2,3,4]);
+    //  console.log(set);
+
+    //  output 1,2,3,4 set removes duplicate value frm array.
+
+    // ############## question 8 ###################
+
+    // let data = {name : "sneha"};
+    // console.log(delete data.name);
+
+    // output true, because it check element successfully deleted.
+
+    // ############## question 9 ###################
+    // let data = {name : "sneha"};
+    // console.log(delete data);
+    // output false we can't delete directly object
+
+    // ############## question 10 ###################
+    //  let a = "sneha";
+    //  console.log(delete a);
+    // output false, because we can't delete any value, by variable name, object name etc.
+
+    // ############## question 11 ###################
+
+    // let a = "sneha";
+    // console.log(delete "sneha");
+
+    // output true, beacuse we can delete it directly by its value.
+
+    // ############## question 12 ###################
+
+    // let data = {name : "sneha"};
+    // delete data.name;
+    // console.log(data)
+
+    // output empty object
+
+    // ############## question 13 ###################
+
+    //   how to return first element or specific element of an array without method
+
+    // const arr = ["sneha", "paaro", "xyz"];
+    // const [y] = arr;
+    // console.log(y)
+
+    // output sneha due to one indexing pass inside second array;
+
+    //   how to return second element from an array without method
+
+    // const arr = ["sneha", "paaro", "xyz"];
+    // const [,y] = arr;
+    // console.log(y);
+
+    // output sneha due to one indexing pass inside second array;
+
+    // ############## question 14 ###################
+    //    how to access property from object without .operator
+    //       const obj = {name : "hirppa", age:"12", skill : "js"};
+    //       const { name } = obj;
+    //       console.log(name)
+    // /
+
+    // ############## question 15 ###################
+    // how to merge two object (by spread operator);
+    // let item = {name : "corona", age : "3", skill : "virus"};
+    // let info = {city : "china"};
+    // console.log( {...item, ...info})
+
+    // output show all data in one object
+
+    // ############## question 16 ###################
+
+    //   let item = {name : "corona", age : "3", skill : "virus"};
+    //       let info = {city : "china"};
+    //       console.log( {item, ...info})
+
+    // city inside item object and item another object
+
+    // ############## question 17 ###################
+
+    // when we merge two object and both object a same key name but distinct Value
+
+    // let obj1 = {name : "chudail", age :"infinite", skill:"problem"};
+    // let obj2  = {city:"mandir", skill:"positive"};
+    // console.log({...obj1, ...obj2});
+
+    // output here skill override with key is from obj1 and value from second obj2.
+
+    // ############## question 18 ###################
+
+    // const name = "sneha";
+    // console.log(name());
+
+    // output typeError name is not function
+
+    // ############## question 19 interviever ke liye second question ###################
+
+    // const result = false || {} || null;
+    // console.log(result);
+
+    // output empty object, because || works with positive value;
+
+    // const resu = false || {} || 20 || null;
+    // console.log(resu);
+
+    // output empty object, because it excute left to right empty object is considered as positive value so return empty object
+
+    // ############## question 20 ###################
+
+    // if({}){
+    //     console.log("output")
+    // }
+    // if block execute because empty object is true value, and if block execute when it have a true value.
+
+    // ############## question 20 ###################
+
+    // const result  = null || false || '';
+    //const result  = null || '' || false; //interviewer question
+    // console.log(result);
+
+    // output when all value is negative it takes last value as a result;
+
+    // ############## question 21 ###################
+    // const resu = [] || 20 || true;
+    // console.log(resu);
+
+    // output empty array, because it excute left to right, empty array is considered as positive value so return empty array.
+
+    // ############## question 22 ###################
+    // var name = 'sneha';
+    // function getName() {
+    //   console.log(name);
+    //   var name = 'radha';
+    // }
+    // getName()
+
+    // output undefined
+
+    // ############## question 23 ###################
+
+    //    console.log(Promise.resolve(5));
+
+    //    output promise fullfilled :5
+
+    // ############## question 24 ###################
+
+    // when we compare two emoji or smiley images what output
+
+    // console.log("imoji1_same" === "imoji1_same"); //here emoji is anythings like heart, smily etc
+
+    // output true
+
+    // ############## question 25 ###################
+
+    // what is JSON.parse()
+
+    // a json parse method is used to convert json to javascript value
+
+    // ############## question 26 ###################
+
+    // let name = 'sneha';
+    // function getName(){
+    //     console.log(name);
+    //     let name = 'radha';
+    // }
+    // getName()
+
+    // output referenceError can't access name before initialization
+    // because let and const are not hoisted and we can not access it before initialization
+    // but var is hoisted so we can access it before initialization
+
+    // ############## question 27 ###################
+    // let name = 'sneha'; // here let works as a global variable so can access inside bloack or function
+    // function getName(){
+    //     console.log(name);
+    // }
+    // getName();
+
+    // output sneha
+
+    // ############## question 28 ###################
+
+    // function getName(){
+    //     let name = 'snehas'
+    // }
+    // console.log(name);
+    // getName();
+
+    // output empty
+
+    // ############## question 29 ###################
+
+    // console.log(`${(x => x)('I love')} to script`) //here x is arrow function which returns somethings
+    // output I love to script
+
+    // ############## question 30 ###################
+    //   function sumValue(x, y, z) {
+    //     return x + y + z;
+    //   }
+    //   console.log(sumValue([...1, 2, 3]));
+    //option
+    // A: sumValue([...1,2,3]);
+    // B: sumValue([...[1,2,3]]);
+    // C: sumValue(...[1,2,3]); // correct
+    // D: sumValue([1,2,3]);
+
+    // ############## question 31 ###################
+
+    //note when we check any data type, with not opertor it always gives false
+    //    const name = 'frontend';
+    //    console.log(!typeof name === 'object');
+    //    console.log(!typeof name === 'string');
+
+    //output both return false
+
+    // ############## question 32 ###################
+    // isNaN means is not a number(so return true for no number)
+    //  const name = "sneha";
+    //  const age = 90;
+    //  console.log(isNaN(name));
+    //  console.log(isNaN(age));
+
+    //  output true, false
+
+    // ############## question 33 ###################
+
+    //   let body = { name: "sneha" };
+    //   Object.seal(body); // by seal method we can't add value inside object we can only modified its value.
+    //   body.age = 29;
+    //   body.name = "prakash";
+    //   console.log(body);
+
+    // ############## question 33 ###################
+    //  how to add more items inside exsitning object with key and value without method
+
+    // let obj = {name : "prakash"};
+
+    // // now want to add age and contact
+    // console.log("before object", obj)
+    // obj.age = 20;
+    // obj.contact = "noida";
+    // console.log("after object", obj)
+
+    // ############## question 34 ###################
+
+    // let arr = [1,2,3,4];
+    // // remove first element of array
+    // arr.shift(); // shift method removes the first element of array
+    // console.log(arr)
+    // output 2,3,4
+
+    // ############## question 34 ###################
+    // let arr = [10,20,30];
+    // //remove the last element of array
+    // arr.pop();
+    // console.log(arr)
+
+    // ############## question 35 ###################
+
+    // how to check the number is odd or even
+
+    // let number = 12;
+    // if(number%2 == 0){
+    //     console.log(`${number} is odd number`);
+    // }
+    // else{
+
+    //     console.log(`${number} is even number`);
+    // }
+
+    // ############## question 36 ###################
+
+    //how to convert type of string to boolean name
+
+    // let val = "heoo";
+    // console.log(typeof !val)
+
+    // ############## question 37 ###################
+    // how to convert a string value into boolean tru and false value
+    // let val = "abc";
+    // console.log(!val)
+
+    // ############## question 38 ###################
+
+    // let array = [1, 2,3,4];
+    // delete array[1];
+    // console.log(array)
+    // console.log(array.length)
+
+    // output "1, empty, 3 4" after delete, it create a empty space at its indexing.
+    // but there is no effects on length it should be remain i.e. 4
+
+    // ############## question 39 ###################
+
+    // how to merge to array in single array
+
+    // let array1 = [1,2,3,4];
+    // let array2 = [5,6,7,8];
+    // let mergeArray = [...array1, ...array2];
+    // console.log(mergeArray)
+
+    //output 1,2,3,4,5,6,7,8
+
+    // ############## question 40 ###################
+    //when we merge two array with same elements what happen (it repeat, but in object doesn't repeate)
+    // let array1 = [1,2,3,4];
+    // let array2 = [4,5,6,7];
+    // let mergeArray = [...array1, ...array2];
+    // console.log(mergeArray);
+
+    //output 1,2,3,4,4,5,6,7
+
+    // ############## question 41 ###################
+
+    // let c = 3**3; // here two ** means powers of given number(left number is for which number to power, right number for indicate root(square root, cube root))
+    // console.log(c)
+
+    //output 27
+    // ############## question 42 ###################
+
+    // let a = 2;
+    // setTimeout(()=>{
+    //     console.log(a)
+    // }, 0);
+
+    // a = 100;
+
+    //output 100
+
+    // ############## question 43 ###################]
+
+    // let a = 10;
+    // let A = 20;
+    // console.log(a);
+    // console.log(A);
+
+    // output no error
+
+    // ############## question 44 ###################
+
+    // let a = "like";
+    // let b = `like`;
+    // console.log(a === b);
+
+    //output both are true because both behaves like string.
+
+    // ############## question 45 ###################
+    //  let a = 1;
+    //  let b = 1;
+    //  let c = 2;
+    //  console.log(a === b === --c);
+
+    //output here a === b = true, now true === --c -> false true is boolean value and c = 1 so output false;
+
+    //   let a = 10;
+    //   const myfunc = () => {
+    //     console.log(a);
+    //     let a = 20;
+    //   };
+    //   console.log(a);
+    //   myfunc();
+
+    // ############## question 46 ###################
+
+    //how to filter data from array of object
+
+    let users = [
+      {
+        id: 1,
+        name: "prakash",
+        age: 20,
+        occupation: "developer",
+      },
+      {
+        id: 2,
+        name: "priyanka",
+        age: 30,
+        occupation: "singer",
+      },
+      {
+        id: 3,
+        name: "dipak",
+        age: 30,
+        occupation: "developer",
+      },
+      {
+        id: 4,
+        name: "pankaj",
+        age: 40,
+        occupation: "developer",
+      },
+      {
+        id: 5,
+        name: "pank",
+        age: 20,
+        occupation: "developer",
+      },
+    ];
+
+    // let filterUsers = [];
+    // for(let i = 0; i< users.length; i++){
+    //     if(users[i].age > 20 && users[i].occupation === "developer"){
+    //     filterUsers = [...filterUsers, users[i]];
+    //     }
+    // }
+    // console.log(filterUsers)
+
+    // let obj = {
+    //     name : "abc",
+    //     age : 20
+    // }
+
+    // let userlist = Object.entries(obj);
+    // console.log(userlist[0]);
+    // let data = userlist.map((item)=>item);
+    // console.log("",data[0])
+
+    // ############## question 46 ###################
+    // const data = function(x,y) {
+    //     return x+y;
+    // }
+    // console.log(data(10, 5))
+
+    //    console.log(b);
+    //    console.log(c);
+    //     var a = 10;
+    //     let b = 20;
+    //     const c = 30;
+
+    // ############## question 47 ###################
+    // how to extract some specific value from array of object and extracted value store another array key and value formate
+
+    // const newArr = [];
+    // users.map((item, index) => (
+    //     newArr.push({ id: item.id, name: item.name })
+    // ))
+    // console.log("newArray", newArr)
+
+    // ############## question 48 ###################
+    // extract value from from array of object and show list on a div which age is greter than 20
+
+    //   let filterData = users?.filter((item) => item.age > 20);
+    //     filterData?.map((data) => {
+    //     let show = document.getElementById("id");
+    //     show.innerHTML += `Name : ${data.name}, age : ${data.age}`; //div id from top
+    //     show.innerHTML += `<br/>`; //to break line
+    //   });
+
+    // ############## question 49 ###################
+    // write a code to alert every 10 seconds that how much time you spent
+
+    // let time = 0;
+    // setInterval(()=>{
+    //     time += 10;
+    //     console.log(time,`You spent seconds`);
+    // },10000);
+
+    // ############## question 50 ###################
+    // write a promise function that when it is less than 4 resolve, when greater than 4 reject
+
+    // const myPromise = new Promise((resolve, reject)=>{
+    // let value = 5; 
+    //   if(value < 4){
+    //     resolve("value is less than 4");
+    //   }
+    //   else{
+    //     reject("value is greater than 4");
+    //   }
+    // });
+    // myPromise.then((result) =>console.log("Success ===>", result)
+    // ).catch((error)=>console.log("Reject ===>",error));
+
+    // here rejected value goes to the catch block and resolve value goes to the then block
+
+    // ############## question 51 ###################
+
+    // what is function expression
+
+    //     let val = function() {
+    //       console.log("hello");
+    //     }
+    //  console.log(val());
+
+    //  output hello and undefined
+
+    // ############## question 52 ###################
+
+    //  let result = function(){
+    //   console.log("ok")
+    //  }
+    //  console.log(result);
+
+    // output it returns a function
+
+    // ############## question 53 ###################
+
+    //  let data = function xyz(){
+    //   console.log("ok");
+    //  }
+    //  xyz();
+
+    // output ReferenceError: xyz is not defined
+
+    // ############## question 54 ###################
+
+    // what is the output when we calling function declaration and function expression before initializatio
+    // expr()
+    // val()
+    //    function expr(){
+    //     console.log("ok")
+    //    }
+
+    //    let val = function(){
+    //     console.log("done")
+    //    }
+
+    //output function declaration gives output ok, 
+    // while function expression gives ReferenceError: Cannot access 'val' before initialization
+
+    // ############## question 55 ###################
+    // ----------------- This keyword --------------------------
+
+    // when calling this keyword itself
+    //  console.log(this)
+    //here this keyword refers to window object
+
+    // when calling this keyword inside function
+
+    //  function myFunc(){
+    //    console.log(this)
+    //  }
+    //  myFunc();
+    //here this keyword refers to window object
+
+
+
+
+    // when calling this keyword itself inside strict mode
+    //  "use strict"
+    //  console.log(this)
+    //here this keyword refers to window object
+
+    //  This keyword with object
+
+
+    // let obj = {
+    //   name :"abc",
+    //   age : 20,
+    //   detail: function(){
+    //     return this
+    //   }
+    // }
+
+    // console.log(obj.detail)
+
+    // ############## question 57 ###################
+
+    // how to merge different object into single object
+
+    // const obj1 = {
+    //   firstName : "abc",
+    //   lastName : "xyz"
+    // }
+
+    // const obj2 = {
+    //   age : 20,
+    // }
+
+    // const obj3 = {
+    //   pin : "123",
+    //   address : "noida"
+    // }
+
+    // const mainObj = {...obj1, ...obj2, ...obj3}
+    // console.log(mainObj)
+
+
+    // ############## question 58 ###################
+    // return name which age is greater than 20
+    let obj = [
+      {
+        name: "abc",
+        age: 19
+      },
+      {
+        name: "xyz",
+        age: 40
+      },
+      {
+        name: "mno",
+        age: 30
+      },
+      {
+        name: "cde",
+        age: 90
+      },
+      {
+        name: "nbc",
+        age: 20
+      }
+    ]
+
+// let result = obj?.filter((user)=>user.age > 20).map((item)=>item.name);
+// console.log(result);
+
+
+
+
+// return name which age is greater than 20 using for loop
+
+// let arr = [];
+
+// for(let i = 0; i < obj.length; i++){
+//    if(obj[i].age > 20){
+//     arr = [...arr, obj[i].name]
+//    }
+// }
+// console.log(arr)
+
+// ############## question 59 ###################
+// extract value from array of object using for loop
+
+// let list = [
+//   {
+//     name : "abc",
+//     age : 19
+//   },
+//   {
+//     name : "xyz",
+//     age : 40
+//   },
+//   {
+//     name : "mno",
+//     age : 30
+//   },
+//   {
+//     name : "cde",
+//     age : 90
+//   },
+//   {
+//     name : "nbc",
+//     age : 20
+//   }
+// ]
+
+// let myData = []
+// for(let i = 0; i<list.length; i++){
+// myData = [...myData, list[i]]
+// }
+// console.log(myData)
+
+
+// ############## question 60 ###################
+// extract value from array using for loop
+
+// let arr = [1,2,3,4];
+// let newArr = [];
+// for(let i = 0; i< arr.length; i++){
+//    newArr = [...newArr, arr[i]]
+// }
+// console.log(newArr);
+
+  </script>
+</body>
+
+</html>
